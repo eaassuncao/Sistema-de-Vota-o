@@ -1,50 +1,45 @@
 package eduardo.eleicao;
 
-
 public class Main {
-	/*
-	 * Desenvolver um projeto para votação de 4 categorias, sendo filme, música,
-	 * escritor e autor.
-	 * 
-	 * Cada uma das categorias deverá possuir 5 candidatos.
-	 * 
-	 * O esquema para votação deverá contemplar apenas essas 4 categorias e mostrar
-	 * no final da votação a apuração dos votos, mostrando o vencedor ou o empate
-	 * entre os candidatos com maior número de votos.
-	 */
-	public static boolean VOTACAO = true;
-	public static int qtd_cand = 20;
+	public static int qtd_cand = 5;
+	public static final int VotacaoMinima = 4;
+	public static int Votados = 0;
+
+	public static Candidato[] categ1 = new Candidato[Main.qtd_cand];
+	public static Candidato[] categ2 = new Candidato[Main.qtd_cand];
+	public static Candidato[] categ3 = new Candidato[Main.qtd_cand];
+	public static Candidato[] categ4 = new Candidato[Main.qtd_cand];
+	
+	public static int[] VotoNulo = new int[4];
+	public static int[] VotoBranco = new int[4];
 
 	public static void main(String[] args) {
-
-		Candidato[] cand = new Candidato[qtd_cand];
-
 		// FILME
-		cand[0] = new Candidato("José", 1, "Filme");
-		cand[1] = new Candidato("Alberto", 2, "Filme");
-		cand[2] = new Candidato("Mayron", 3, "Filme");
-		cand[3] = new Candidato("Junior", 4, "Filme");
-		cand[4] = new Candidato("Jorge", 5, "Filme");
+		categ1[0] = new Candidato("José", 1, "Filme");
+		categ1[1] = new Candidato("Alberto", 2, "Filme");
+		categ1[2] = new Candidato("Mayron", 3, "Filme");
+		categ1[3] = new Candidato("Junior", 4, "Filme");
+		categ1[4] = new Candidato("Jorge", 5, "Filme");
 		// MÚSICA
-		cand[5] = new Candidato("Adair", 1, "Música");
-		cand[6] = new Candidato("Elenilton", 2, "Música");
-		cand[7] = new Candidato("Joselinton", 3, "Música");
-		cand[8] = new Candidato("Diogo", 4, "Música");
-		cand[9] = new Candidato("Junin", 5, "Música");
+		categ2[0] = new Candidato("Adair", 1, "Música");
+		categ2[1] = new Candidato("Elenilton", 2, "Música");
+		categ2[2] = new Candidato("Joselinton", 3, "Música");
+		categ2[3] = new Candidato("Diogo", 4, "Música");
+		categ2[4] = new Candidato("Junin", 5, "Música");
 		// ESCRITOR
-		cand[10] = new Candidato("Sergio", 1, "Escritor");
-		cand[11] = new Candidato("Altemar", 2, "Escritor");
-		cand[12] = new Candidato("Eduardo", 3, "Escritor");
-		cand[13] = new Candidato("Lilian", 4, "Escritor");
-		cand[14] = new Candidato("Josevaldo", 5, "Escritor");
+		categ3[0] = new Candidato("Sergio", 1, "Escritor");
+		categ3[1] = new Candidato("Altemar", 2, "Escritor");
+		categ3[2] = new Candidato("Eduardo", 3, "Escritor");
+		categ3[3] = new Candidato("Lilian", 4, "Escritor");
+		categ3[4] = new Candidato("Josevaldo", 5, "Escritor");
 		// AUTOR
-		cand[15] = new Candidato("Tico", 1, "Autor");
-		cand[16] = new Candidato("Teco", 2, "Autor");
-		cand[17] = new Candidato("Tuco", 3, "Autor");
-		cand[18] = new Candidato("Tucson", 4, "Autor");
-		cand[19] = new Candidato("Tucsonildo", 5, "Autor");
-
-		Funcoes.Votar(cand, qtd_cand);
-
+		categ4[0] = new Candidato("Tico", 1, "Autor");
+		categ4[1] = new Candidato("Teco", 2, "Autor");
+		categ4[2] = new Candidato("Tuco", 3, "Autor");
+		categ4[3] = new Candidato("Tucson", 4, "Autor");
+		categ4[4] = new Candidato("Tucsonildo", 5, "Autor");
+		
+		new TelaCateg1();
+		
 	}
 }
